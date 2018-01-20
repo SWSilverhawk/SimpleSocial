@@ -1,0 +1,7 @@
+{
+    "KeepAliveAddress": "228.5.6.7",
+    "ServerPort": 13500,
+    "RegistryPort": 13501,
+    "UserIDPersistence": 86400000,
+    "FriendRequestsPersistence": 43200000
+}
