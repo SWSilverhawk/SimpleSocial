@@ -5,8 +5,8 @@ import org.json.simple.parser.JSONParser;
 import simone.rcl.shared.CallbackHandlerInterface;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MulticastSocket;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -23,7 +23,7 @@ public class SocialServer {
         JSONObject settingsFile;
 
         try {
-            settingsFile = (JSONObject) settingsParser.parse(new FileReader("conf/server_settings.json"));
+            settingsFile = (JSONObject) settingsParser.parse(new InputStreamReader(SocialServer.class.getResourceAsStream("/server_settings.json")));
         } catch (Exception e) {
             e.printStackTrace();
             return;

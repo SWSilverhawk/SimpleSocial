@@ -3,7 +3,7 @@ package simone.rcl.client;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,7 +14,7 @@ public class SocialClient {
         JSONObject settingsFile;
 
         try {
-            settingsFile = (JSONObject) settingsParser.parse(new FileReader("conf/client_settings.json"));
+            settingsFile = (JSONObject) settingsParser.parse(new InputStreamReader(SocialClient.class.getResourceAsStream("/client_settings.json")));
         } catch (Exception e) {
             e.printStackTrace();
             return;
